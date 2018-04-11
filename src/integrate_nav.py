@@ -22,6 +22,8 @@ class LOC_InteNav:
         self.sub_modules = []
 
         self.tLocResult = LOC_POSTION()
+
+        self.accumlate_distance = 0
         
     def init(self):
         # 初始化kalman参数的默认值
@@ -112,6 +114,7 @@ class LOC_InteNav:
             A[3,2] = np.sin(dH);    A[3,3] = np.cos(dH)
 
             # TODO:更新过程噪声矩阵
+            
             self.kalman_core.predict()
             
             self.f64TimeoffsetLast = self.f64Timeoffset

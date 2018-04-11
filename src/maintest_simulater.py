@@ -35,7 +35,6 @@ class Simulater:
     def process(self):
         main_nav = LOC_InteNav()
         main_nav.init()
-        is_started = False
         nframe = len(self.sync_data_lst)
 
         display = defaultdict(list)
